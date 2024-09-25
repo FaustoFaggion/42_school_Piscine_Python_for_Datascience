@@ -1,11 +1,5 @@
 from time import time, strftime, gmtime, asctime, ctime
 
-print('gmtime ', gmtime())
-
-print('asctime ', asctime())
-
-print('ctime ', ctime())
-
 now = time()
 
 print("Seconds since January 1, 1970:", f"{now:,}", 'or', f"{now:e}", 'in scientific notation')

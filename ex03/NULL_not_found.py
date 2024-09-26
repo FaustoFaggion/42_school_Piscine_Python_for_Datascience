@@ -5,6 +5,7 @@ def NULL_not_found(object: any) -> int:
     # Get the current frame and the caller's local variables
     frame = inspect.currentframe()
     try:
+        # print(frame.f_back.f_globals)
         caller_locals = frame.f_back.f_locals
         # Find the variable name that matches the value
         var_name = [name for name, value in caller_locals.items() 

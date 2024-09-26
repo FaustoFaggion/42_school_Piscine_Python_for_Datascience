@@ -1,18 +1,22 @@
+import inspect
 
 def NULL_not_found(object: any) -> int:
 
-    typ = type(object)
-    name = type(object).__name__
-    print(name)
-    if name == "NoneType":
-        print("Nothing")
-    elif isinstance(object, float) and object != object:  # Check for NaN
-        return "Cheese: nan <class 'float'>"
-    elif object == 0:
-        return "Zero: 0 <class 'int'>"
-    elif object == '':
-        return "Empty: <class 'str'>"
-    elif object is False:
-        return "Fake: False <class 'bool'>"
-    else:
-        return "Type not Found"
+    # Get the current frame and the caller's local variables
+    frame = inspect.currentframe()
+    try:
+        caller_locals = frame.f_back.f_locals
+        # Find the variable name that matches the value
+        var_name = [name for name, value in caller_locals.items() 
+                    if value is object and not name.startswith("__")]
+        
+        if (not var_name):
+            print('Type not Found')
+            return 1
+        else:
+            response = var_name[0] + ":"
+    finally:
+        del frame  # Clean up to avoid reference cycles
+    
+    print(response, object, type(object))
+    return 0

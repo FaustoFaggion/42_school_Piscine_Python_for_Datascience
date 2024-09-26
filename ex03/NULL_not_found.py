@@ -19,4 +19,4 @@ def NULL_not_found(object: any) -> int:
     finally:
         del frame  # Clean up to avoid reference cycles
     
-    return 0
+    return 1

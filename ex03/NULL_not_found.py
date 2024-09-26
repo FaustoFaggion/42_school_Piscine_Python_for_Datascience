@@ -13,11 +13,10 @@ def NULL_not_found(object: any) -> int:
         
         if (not var_name):
             print('Type not Found')
-            return 1
         else:
             response = var_name[0] + ":"
+            print(response, object, type(object))
     finally:
         del frame  # Clean up to avoid reference cycles
     
-    print(response, object, type(object))
     return 0

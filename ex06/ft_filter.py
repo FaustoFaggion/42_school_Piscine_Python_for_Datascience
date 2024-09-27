@@ -15,7 +15,7 @@ def main(argv: any):
         if not argv[2].isdigit():
             raise AssertionError("AssertionError: the arguments are bad ..")
     
-        n = argv[2]
+        n = int(argv[2])
         text = argv[1].split()
         for word in text:
              if not word.isalpha():

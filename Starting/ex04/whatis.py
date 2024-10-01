@@ -1,9 +1,10 @@
 import sys
 
 try:
-    if len(sys.argv) > 2:
-        raise AssertionError("more than one argument is provided")
+    assert len(sys.argv) <= 2, "more than one argument is provided"
+    #IF INDEX 1 DON'T EXIST SYS REAISE IndexError
     num = sys.argv[1]
+    #IF int() NOT RECEIVE A NOT INT VALUE RAISE THE ValueError
     if int(num) % 2 != 0:
         print("I'm Odd.")
     else:

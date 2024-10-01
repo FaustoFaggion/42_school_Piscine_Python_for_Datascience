@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ft_package"
+version = "0.0.1"
+description = "A sample test package"
+readme = "README.md"
+author = "eagle"
+author_email = "eagle@42.fr"
+license = { text = "MIT" }
+homepage = "https://github.com/eagle/ft_package"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.6"

@@ -15,3 +15,7 @@ except ValueError as e:
     print("AssertionError: argument is not an integer")
 except IndexError as e:
     print("AssertionError: argument not provided")
+except Exception as e:
+    print(e)
+
+print("Jorge")

@@ -1,12 +1,6 @@
 import sys
 from ft_filter import ft_filter
 
-def f(x):
-    if len(x) < 3:
-       return True
-    else:
-       return False
-
 def main(argv: any):
 
     try:
@@ -17,9 +11,7 @@ def main(argv: any):
         text_to_list = argv[1].split()    
         words_lst: list = [x for x in text_to_list if x.isalpha()]
         response = ft_filter(lambda word: len(word) > n, words_lst)
-   
-        for x in response:
-            print(x)
+        print(response)
     except Exception as e:
         print(e)
 

@@ -47,22 +47,23 @@ def aff_pop():
         plt.plot(x_axis, y_other_axis, label= other_country)
 
         # #SET LABELS
-        # plt.legend(loc='upper left')  # or any other location
-        df_title = "Populations Projection"
-        df_xlabel = "Year"
-        df_ylabel = "Population"
-        df_my_country.plot(xlabel = df_xlabel, ylabel = df_ylabel, title = df_title)
-        # plt.title = "Populations Projection"
-        # plt.xlabel = "Year"
-        # plt.ylabel = "Popupation"
+        # df_title = "Populations Projection"
+        # df_xlabel = "Year"
+        # df_ylabel = "Population"
+        # df_my_country.plot(xlabel = df_xlabel, ylabel = df_ylabel, title = df_title)
+        plt.title("Populations Projection")
+        plt.xlabel("Year")
+        plt.ylabel("Popupation")
         
-        # Step 6: Set x-ticks to show every 4 years
+        # SET LAYOUT
+        plt.legend(loc='upper left')  # or any other location
+        plt.tight_layout()  
+        
+        # SET X-TICKS To SHOW EVERY 40 YEARS
         ticks = range(0, len(x_axis), 40)
         plt.xticks(ticks, labels=x_axis[::40], rotation=45)
 
         #  SHOW CHART IN THE TERMINAL
-        plt.legend()
-        plt.tight_layout()  
         plt.show()
     except Exception as e:
         print(e)

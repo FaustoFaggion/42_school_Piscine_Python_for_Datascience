@@ -44,11 +44,6 @@ def project_life():
         # MERGE DATA FRAMES
         df_merge = df_1.merge(df_2, on='country', suffixes=("df_1", "df_2"))
         print(df_merge)
-        # #CREATE FILTERED DATA FRAME
-        # year = "1900"
-        # other_country = "Angola"
-        # df_my_country = df_1.loc[:, year]
-        # df_other_country = data_frame.loc[other_country]
 
         # #SPECIFY X AND Y AXIS
         x_axis = df_merge["1900df_1"]     
@@ -63,13 +58,15 @@ def project_life():
         plt.ylabel('Life expectancy')
         plt.title('1900')
         
-        # Step 6: Set x-ticks to show every 4 years
-        # ticks = range(0, len(x_axis), 100)
-        # plt.xticks(ticks, labels=x_axis[::100], rotation=45)
-
-        #  SHOW CHART IN THE TERMINAL
+        # SET LAYOUT
         plt.legend()
         plt.tight_layout()  
+
+        # SET X-TICKS To SHOW EVERY 40 YEARS
+        # ticks = range(0, len(x_axis), 40)
+        # plt.xticks(ticks, labels=x_axis[::40], rotation=45)
+
+        #  SHOW CHART IN THE TERMINAL
         plt.show()
     except Exception as e:
         print(e)

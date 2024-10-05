@@ -15,7 +15,7 @@ class Character(ABC):
             me = "in haven"
         return f"My name is {self.first_name} a I'm {me}"
 
-class Strong(Character):
+class Stark(Character):
     """
     A class to represent a character in a story.
     Child class of Character class
@@ -45,22 +45,21 @@ class Strong(Character):
         do_not_do_it():
         Set is_alive attribute to False.
         """
-        self.is_alive == False 
+        self.is_alive = False 
 
 def main():
 
-    pepe = Strong("PEPE")
-    print(pepe)
-    print("\nStrong.__doc__:\n", pepe.__doc__)
-    print("\n__init__.__doc__:\n", pepe.__init__.__doc__)
-    print("\ndo_not_do_it.__doc__:\n", pepe.do_not_do_it.__doc__)
-    pepe.do_not_do_it()
-    print(pepe)
-    print("\npepe.__dict__:\n", pepe.__dict__, "\n")
-    Piporopo = Strong("PIPOPOPOROPO", False)
-    print(Piporopo)
-
-   
+    Ned = Stark("Ned")
+    print(Ned.__dict__)
+    print(Ned.is_alive)
+    Ned.do_not_do_it()
+    print(Ned.is_alive)
+    print(Ned.__doc__)
+    print(Ned.__init__.__doc__)
+    print(Ned.do_not_do_it.__doc__)
+    print("---")
+    Lyanna = Stark("Lyanna", False)
+    print(Lyanna.__dict__)
 
 if __name__ == "__main__":
     main()

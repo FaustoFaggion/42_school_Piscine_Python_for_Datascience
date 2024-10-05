@@ -56,8 +56,10 @@ def main():
     print("\ndo_not_do_it.__doc__:\n", pepe.do_not_do_it.__doc__)
     pepe.do_not_do_it()
     print(pepe)
-    y = Strong("PIPOPOPOROPO", False)
-    print(y)
+    print("\npepe.__dict__:\n", pepe.__dict__, "\n")
+    Piporopo = Strong("PIPOPOPOROPO", False)
+    print(Piporopo)
+
    
 
 if __name__ == "__main__":

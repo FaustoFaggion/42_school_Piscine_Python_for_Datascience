@@ -6,16 +6,17 @@ class Character(ABC):
         self.first_name = first_name
         self.is_alive = is_alive
 
+    def __str__(self):
+        """
+        Return a string representation of the character.
+        """
+        f"Vector: ({self.family_name}, {self.eyes}, {self.hairs})"
+        return self.__str__()
+    
     @abstractmethod
     def do_not_do_it(self):
         pass
     
-    # def __str__(self):
-    #     me = "good"
-    #     if self.is_alive == False:
-    #         me = "in haven"
-    #     return f"My name is {self.first_name} a I'm {me}"
-
 class Stark(Character):
     """
     A class to represent a character in a story.
@@ -46,20 +47,3 @@ class Stark(Character):
         Set is_alive attribute to False.
         """
         self.is_alive = False 
-
-def main():
-
-    Ned = Stark("Ned")
-    print(Ned.__dict__)
-    print(Ned.is_alive)
-    Ned.do_not_do_it()
-    print(Ned.is_alive)
-    print(Ned.__doc__)
-    print(Ned.__init__.__doc__)
-    print(Ned.do_not_do_it.__doc__)
-    print("---")
-    Lyanna = Stark("Lyanna", False)
-    print(Lyanna.__dict__)
-
-if __name__ == "__main__":
-    main()

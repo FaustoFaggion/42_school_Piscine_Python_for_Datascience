@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from load_image import load_image
 
-def zoom():
+def rotate():
 
     image_path = sys.argv[1]
 
@@ -19,17 +19,18 @@ def zoom():
 
     #IMAGE ZOOM
     img_zoom = img_green_scale.crop([400, 100, 800, 500])
-    img_zoom_heigth, img_zoom_width = img_zoom.size
-    print(f"New shapw after slicing: ({img_zoom_heigth}, {img_zoom_width}, {len(img_zoom.getbands())})")
-    print(np.array(img_zoom))
+    img_rotate = img_zoom.rotate(90)
+    img_rotate_heigth, img_rotate_width = img_rotate.size
+    print(f"New shapw after slicing: ({img_rotate_heigth}, {img_rotate_width}, {len(img_rotate.getbands())})")
+    print(np.array(img_rotate))
     
-    # img_zoom.show()
+    # img_rotate.show()
 
-    plt.imshow(img_zoom, cmap="grey")
+    plt.imshow(img_rotate, cmap="grey")
     plt.axis('on')
     plt.show()
     
 
 
 if __name__ == "__main__":
-    zoom()
+    rotate()

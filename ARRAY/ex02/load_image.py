@@ -1,23 +1,24 @@
 from PIL import Image, UnidentifiedImageError
+import numpy as np
 
 def load_image(image: str):
     try:
         img = Image.open(image)
-        img_mode = 0
-        if img.mode == "RGB":
-            img_mode = 3
+        if img is None:
+            raise AssertionError("Image fail to load")
+        
+        #PRINT SIZE AND CHANNELS
+        img_channels = len(img.getbands())
         img_height, img_width = img.size
-        print(f"({img_height}, {img_width}, {img_mode})")
+        print(f"({img_height}, {img_width}, {img_channels})")
 
-        # Print the RGB values of the pixels
-        # pixels = img.load()  # Load pixel data
-        # width, height = img.size
-        # for y in range(height):
-            # for x in range(width):
-            #     r, g, b = pixels[x, y]
-            #     print(f"[{r}, {g}, {b}]", end="")
-        # Optional: display the image
-        img.show()  
+        #PRINT PIXEL ARRAY
+        print(np.array(img))
+
+        #SHOW IMAGE
+        img.show()
+
+        return img
     
     except FileNotFoundError as e:
         print(f"Error: The file was not found - {e}")
@@ -26,4 +27,3 @@ def load_image(image: str):
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-# Ensure to run the main function as described earlier

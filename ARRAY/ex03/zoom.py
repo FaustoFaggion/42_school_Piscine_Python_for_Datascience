@@ -2,6 +2,7 @@ import sys
 import os
 from PIL import Image
 import numpy as np
+from load_image import load_image
 
 def zoom():
 
@@ -10,17 +11,7 @@ def zoom():
     assert image_path.endswith(("jpeg", "jpg")), "Image extension must be jpeg or jpg"
     assert os.path.exists(image_path), "Image not found"
     
-    #OPEN IMAGE
-    img = Image.open(image_path)
-    if img is None:
-        raise AssertionError("Image fail to load")
-
-    #ORIGINAL IMAGE INFORMATION
-    img_heigth, img_width = img.size
-    print(f"({img_heigth}, {img_width}, {len(img.getbands())})")
-    print(np.array(img))
-    img.show()
-
+    img = load_image(image_path)
 
     #CONVERT TO GREEN SCALE
     img_green_scale = img.convert("L")

@@ -3,21 +3,21 @@ from PIL import Image, UnidentifiedImageError
 def load_image(image: str):
     try:
         img = Image.open(image)
-        
+        img_mode = 0
         if img.mode == "RGB":
             img_mode = 3
         img_height, img_width = img.size
         print(f"({img_height}, {img_width}, {img_mode})")
 
         # Print the RGB values of the pixels
-        pixels = img.load()  # Load pixel data
-        width, height = img.size
-        for y in range(height):
-
-            for x in range(width):
-                r, g, b = pixels[x, y]
-                print(f"[{r}, {g}, {b}]", end="")
-        # img.show()  # Optional: display the image
+        # pixels = img.load()  # Load pixel data
+        # width, height = img.size
+        # for y in range(height):
+            # for x in range(width):
+            #     r, g, b = pixels[x, y]
+            #     print(f"[{r}, {g}, {b}]", end="")
+        # Optional: display the image
+        img.show()  
     
     except FileNotFoundError as e:
         print(f"Error: The file was not found - {e}")

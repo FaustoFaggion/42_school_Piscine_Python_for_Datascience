@@ -1,4 +1,5 @@
 import sys
+
 from load_image import load_image
 
 def main():

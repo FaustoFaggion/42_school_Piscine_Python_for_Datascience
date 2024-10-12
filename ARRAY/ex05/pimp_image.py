@@ -1,4 +1,5 @@
 import sys
+from load_image import load_image
 from PIL import Image, ImageOps
 import os
 
@@ -50,7 +51,7 @@ def pimp_image():
     
     try:
         image_path = sys.argv[1]
-        img = Image.open(image_path)
+        img = load_image(image_path)
         assert image_path.endswith(("jpeg", "jpg")), "Image extension must be jpeg or jpg"
         assert os.path.exists(image_path), "Image not found"
 

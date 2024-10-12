@@ -10,7 +10,7 @@ def load_image(image: str):
         #PRINT SIZE AND CHANNELS
         img_channels = len(img.getbands())
         img_height, img_width = img.size
-        print(f"({img_height}, {img_width}, {img_channels})")
+        print(f"The shape of the image is: ({img_height}, {img_width}, {img_channels})")
 
         #PRINT PIXEL ARRAY
         print(np.array(img))

@@ -2,6 +2,7 @@ import sys
 import os
 from PIL import Image
 import numpy as np
+import matplotlib.pyplot as plt
 from load_image import load_image
 
 def zoom():
@@ -19,9 +20,15 @@ def zoom():
     #IMAGE ZOOM
     img_zoom = img_green_scale.crop([400, 100, 800, 600])
     img_zoom_heigth, img_zoom_width = img_zoom.size
-    print(f"({img_zoom_heigth}, {img_zoom_width}, {len(img_zoom.getbands())})")
+    print(f"New shapw after slicing: ({img_zoom_heigth}, {img_zoom_width}, {len(img_zoom.getbands())})")
     print(np.array(img_zoom))
-    img_zoom.show()
+    
+    # img_zoom.show()
+
+    plt.imshow(img_zoom, cmap="grey")
+    plt.axis('on')
+    plt.show()
+    
 
 
 if __name__ == "__main__":
